@@ -76,7 +76,7 @@ public class RegisterTest {
 
     @Test
     public void testRegisterSuccess() {
-        RegisterRequest request = mockRequest("", "Nguyen Van A", "Hanoi", "NAM", "ACTIVE", "password123");
+        RegisterRequest request = mockRequest("013456789", "Nguyen Van A", "Hanoi", "NAM", "ACTIVE", "password123");
 
         when(userRepository.existsByPhoneNumber(request.getPhoneNumber())).thenReturn(true);
         when(roleRepository.findByRoleName("ROLE_MEMBER")).thenReturn(Optional.of(new RoleEntity()));
