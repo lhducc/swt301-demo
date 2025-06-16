@@ -78,7 +78,7 @@ public class RegisterTest {
     public void testRegisterSuccess() {
         RegisterRequest request = mockRequest("0912345678", "Nguyen Van A", "Hanoi", "NAM", "ACTIVE", "password123");
 
-        when(userRepository.existsByPhoneNumber(request.getPhoneNumber())).thenReturn(false);
+        when(userRepository.existsByPhoneNumber(request.getPhoneNumber())).thenReturn(true);
         when(roleRepository.findByRoleName("ROLE_MEMBER")).thenReturn(Optional.of(new RoleEntity()));
         when(passwordEncoder.encode(request.getConfirmPassword())).thenReturn("encodedPassword");
 
